@@ -1,2 +1,5 @@
 /* anaconda environment dir*/
 env
+
+/* notebook temp files */
+.ipynb_checkpoints
