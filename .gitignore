@@ -3,3 +3,9 @@ env
 
 /* notebook temp files */
 .ipynb_checkpoints
+
+/* python temp files */
+__pycache__
+
+/* model checkpoints (ignore because it's too big) */
+saved_model
