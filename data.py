@@ -31,7 +31,7 @@ class TrajectoryDataset(Dataset):
         agent_x = sequence[sequence["OBJECT_TYPE"] == "AGENT"]["X"]
         agent_y = sequence[sequence["OBJECT_TYPE"] == "AGENT"]["Y"]
         agent_traj = np.column_stack((agent_x, agent_y)).astype(np.float32)
-        # return {"input": agent_traj[:self.obs_len], "target": agent_traj[self.obs_len:]}
+        # return input and target
         return [agent_traj[:self.obs_len], agent_traj[self.obs_len:]]
 
 def get_dataset(modes):
