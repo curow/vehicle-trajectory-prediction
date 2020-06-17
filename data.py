@@ -5,7 +5,7 @@ import numpy as np
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 
-ROOT_DIR = "../../datasets/argoverse/argoverse-forecasting-dataset/"
+ROOT_DIR = "/ssd/datasets/argoverse/argoverse-forecasting-dataset/"
 TRAIN = ROOT_DIR + "train/data"
 VAL = ROOT_DIR + "val/data"
 TEST = ROOT_DIR + "test_obs/data/"
