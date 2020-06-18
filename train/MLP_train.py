@@ -62,7 +62,7 @@ for epoch in range(epoches):
             
     model.eval()
     model_dir = "saved_model/MLP"
-    os.makedirs(model_path, exist_ok=True)
+    os.makedirs(model_dir, exist_ok=True)
     torch.save(model.state_dict(), model_dir + "/MLP_epoch{}".format(epoch))
     print("start validating...")
     with torch.no_grad():

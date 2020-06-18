@@ -2,13 +2,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+import random
+
 class Encoder(nn.Module):
     def __init__(self,
                  input_size = 2,
-                 embedding_size = 8,
-                 hidden_size = 16,
+                 embedding_size = 128,
+                 hidden_size = 256,
                  n_layers = 4,
-                 dropout = 0):
+                 dropout = 0.5):
         super().__init__()
         self.hidden_size = hidden_size
         self.n_layers = n_layers
@@ -38,10 +40,10 @@ class Encoder(nn.Module):
 class Decoder(nn.Module):
     def __init__(self,
                  output_size = 2,
-                 embedding_size = 8,
-                 hidden_size = 16,
+                 embedding_size = 128,
+                 hidden_size = 256,
                  n_layers = 4,
-                 dropout = 0):
+                 dropout = 0.5):
         super().__init__()
         self.output_size = output_size
         self.hidden_size = hidden_size
@@ -89,7 +91,7 @@ class Seq2Seq(nn.Module):
         self.decoder = decoder
         self.device = device
 
-        assert encoder.hid_dim == decoder.hid_dim, \
+        assert encoder.hidden_size == decoder.hidden_size, \
             "Hidden dimensions of encoder and decoder must be equal!"
         assert encoder.n_layers == decoder.n_layers, \
             "Encoder and decoder must have equal number of layers!"

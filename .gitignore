@@ -8,4 +8,4 @@ env
 __pycache__
 
 /* model checkpoints (ignore because it's too big) */
-saved_model
+saved_models
