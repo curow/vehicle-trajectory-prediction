@@ -9,3 +9,6 @@ __pycache__
 
 /* model checkpoints (ignore because it's too big) */
 saved_models
+
+/* ignore data */
+data
