@@ -12,3 +12,6 @@ saved_models
 
 /* ignore data */
 data
+
+/* ignore tensorboard runs */
+runs
